@@ -18,7 +18,7 @@ function media_upload_tabs() {
 		'type' => __('From Computer'), // handler action suffix => tab text
 		'type_url' => __('From URL'),
 		'gallery' => __('Gallery'),
-		'library' => __('Media Library')
+		'library' => __('Media Library 1')
 	);
 
 	/**
@@ -288,8 +288,8 @@ function media_handle_upload($file_id, $post_id, $post_data = array(), $override
 	$file = $file['file'];
 	$title = $name;
 	$content = '';
-	$excerpt = '';
-
+	$excerpt = '';	
+	
 	if ( preg_match( '#^audio#', $type ) ) {
 		$meta = wp_read_audio_metadata( $file );
 

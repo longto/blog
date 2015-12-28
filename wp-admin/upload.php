@@ -67,7 +67,7 @@ if ( 'grid' === $mode ) {
 		'<p>' . __( '<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>' ) . '</p>'
 	);
 
-	$title = __('Media Library');
+	$title = __('Media Library1');
 	$parent_file = 'upload.php';
 
 	require_once( ABSPATH . 'wp-admin/admin-header.php' );

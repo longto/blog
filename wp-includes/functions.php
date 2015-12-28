@@ -517,7 +517,7 @@ function wp_extract_urls( $content ) {
 			. "(?:"
 				. "\([\w\d]+\)|"
 				. "(?:"
-					. "[^`!()\[\]{};:'\".,<>«»“”‘’\s]|"
+					. "[^`!()\[\]{};:'\".,<>Â«Â»â€œâ€�â€˜â€™\s]|"
 					. "(?:[:]\d+)?/?"
 				. ")+"
 			. ")"
@@ -1884,10 +1884,12 @@ function wp_upload_dir( $time = null ) {
 	if ( get_option( 'uploads_use_yearmonth_folders' ) ) {
 		// Generate the yearly and monthly dirs
 		if ( !$time )
-			$time = current_time( 'mysql' );
+			$time = current_time( 'mysql' );	
+		
 		$y = substr( $time, 0, 4 );
 		$m = substr( $time, 5, 2 );
-		$subdir = "/$y/$m";
+		$d = substr( $time, 8, 2 );
+		$subdir = "/$y/$m/$d";
 	}
 
 	$dir .= $subdir;
